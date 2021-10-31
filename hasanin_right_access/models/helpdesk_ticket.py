@@ -26,7 +26,7 @@ class ProjectTask(models.Model):
 
         stage_id = False
         if values.get('stage_id'):
-            stage_id = self.env['project.task.type'].browse(values['stage_id'])
+            stage_id = self.env['helpdesk.stage'].browse(values['stage_id'])
         else:
             return super(ProjectTask, self).write(values)
 
