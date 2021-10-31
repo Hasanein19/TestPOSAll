@@ -2,7 +2,7 @@ from odoo import api, models, _
 from odoo.exceptions import UserError, ValidationError
 
 
-class ProjectTask(models.Model):
+class HelpdeskTicket(models.Model):
     _inherit = "helpdesk.ticket"
 
     @api.model
@@ -20,7 +20,7 @@ class ProjectTask(models.Model):
             if not self.env.user.has_group('hasanin_right_access.can_move_btw_helpdesk_stages'):
                 raise UserError(_("You are not allowed to change task stage !!"))
 
-        return super(ProjectTask, self).create(values)
+        return super(HelpdeskTicket, self).create(values)
 
     def write(self, values):
 
@@ -28,7 +28,7 @@ class ProjectTask(models.Model):
         if values.get('stage_id'):
             stage_id = self.env['helpdesk.stage'].browse(values['stage_id'])
         else:
-            return super(ProjectTask, self).write(values)
+            return super(HelpdeskTicket, self).write(values)
 
         # Check if the current user has access to change task to closed stage
         if stage_id.is_close:
@@ -39,3 +39,5 @@ class ProjectTask(models.Model):
         if not stage_id.is_close:
             if not self.env.user.has_group('hasanin_right_access.can_move_btw_helpdesk_stages'):
                 raise UserError(_("You are not allowed to change ticket stage !!"))
+
+        return super(HelpdeskTicket, self).write(values)
