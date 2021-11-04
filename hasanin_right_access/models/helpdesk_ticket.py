@@ -40,6 +40,12 @@ class HelpdeskTicket(models.Model):
         else:
             return super(HelpdeskTicket, self).write(values)
 
+            # stop delete action
+
+        def unlink(self):
+            print("deleting the record")
+            return super(helpdesk_ticket, self).unlink()
+
         # Check if the current user has access to change ticket to closed stage
         if stage_id.is_close:
             if not self.env.user.has_group('hasanin_right_access.can_move_to_closed_helpdesk_stages'):
@@ -52,7 +58,3 @@ class HelpdeskTicket(models.Model):
 
         return super(HelpdeskTicket, self).write(values)
 
-  #stop delete action
-    def unlink(self):
-    print("deleting the record")
-    return super(helpdesk_ticket, self).unlink()
