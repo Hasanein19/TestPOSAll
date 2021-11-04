@@ -40,11 +40,7 @@ class HelpdeskTicket(models.Model):
         else:
             return super(HelpdeskTicket, self).write(values)
 
-            # stop delete action
-
-        def unlink(self):
-            print("deleting the record")
-            return super(helpdesk_ticket, self).unlink()
+          
 
         # Check if the current user has access to change ticket to closed stage
         if stage_id.is_close:
