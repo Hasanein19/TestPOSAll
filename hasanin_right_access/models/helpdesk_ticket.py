@@ -40,7 +40,7 @@ class HelpdeskTicket(models.Model):
         else:
             return super(HelpdeskTicket, self).write(values)
 
-          
+
 
         # Check if the current user has access to change ticket to closed stage
         if stage_id.is_close:
