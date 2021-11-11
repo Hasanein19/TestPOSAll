@@ -2,7 +2,7 @@ from odoo import api, models, _
 from odoo.exceptions import UserError, ValidationError
 
 
-class MaintenanceStage(models.Model):
+class ProjectTask(models.Model):
     _inherit = "project.task"
     _inherit = "maintenance.request"
     _inherit = "maintenance.stage"
