@@ -12,8 +12,8 @@ class ProjectTask(models.Model):
     def create(self, values):
 
       #  stage_id = self.env['project.task.type'].browse(values['stage_id'])
-       # stage_id = fields.Many2one("maintenance.stage", readonly=True)
-        stage_id = self.env['maintenance.stage'].browse(values['stage_id'])
+        stage_id = fields.Many2one("maintenance.stage", readonly=True)
+      #  stage_id = self.env['maintenance.stage'].browse(values['stage_id'])
 
 
 
