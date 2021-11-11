@@ -19,10 +19,10 @@
         </record>
 
 
-                <!-- Maintenace stages -->
-               <record id="can_move_btw_Maintenance_stages" model="res.groups">
+                <!-- Maintenanceticket stages Access role -->
+               <record id="" model="res.groups">
                <field name="name">Move between Maintenance stages</field>
-               <field name="category_id" ref="hasanin_right_access.move_Maintenance_stages"/>
+               <field name="category_id" ref=""/>
                </record>
 
 
