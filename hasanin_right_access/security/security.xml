@@ -19,13 +19,6 @@
         </record>
 
 
-                <!-- Maintenanceticket stages Access role -->
-               <record id="" model="res.groups">
-               <field name="name">Move between Maintenance stages</field>
-               <field name="category_id" ref=""/>
-               </record>
-
-
         <!-- Helpdesk ticket stages Access role -->
         <record id="move_helpdesk_stages" model="ir.module.category">
             <field name="name">Helpdesk ticket stages</field>
