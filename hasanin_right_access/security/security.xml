@@ -18,6 +18,14 @@
             <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
         </record>
 
+
+                <!-- Maintenace stages -->
+               <record id="can_move_btw_Maintenance_stages" model="res.groups">
+               <field name="name">Move between Maintenance stages</field>
+               <field name="category_id" ref="hasanin_right_access.move_Maintenance_stages"/>
+               </record>
+
+
         <!-- Helpdesk ticket stages Access role -->
         <record id="move_helpdesk_stages" model="ir.module.category">
             <field name="name">Helpdesk ticket stages</field>
