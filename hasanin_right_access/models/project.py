@@ -4,11 +4,22 @@ from odoo.exceptions import UserError, ValidationError
 
 class ProjectTask(models.Model):
     _inherit = "project.task"
+    _inherit = "maintenance.request"
+    _inherit = "maintenance.stage"
+
 
     @api.model
     def create(self, values):
 
-        stage_id = self.env['project.task.type'].browse(values['stage_id'])
+      #  stage_id = self.env['project.task.type'].browse(values['stage_id'])
+        stage_id = fields.Many2one("maintenance.stage", readonly=True)
+        next_stage_ids = fields.Many2many(
+            "maintenance.stage",
+            string="Next stages",
+            relation="maintenance_stage_next_stage",
+            column1="stage_id",
+        )
+
 
         # Check if the current user has access to change task to closed stage
         if stage_id.is_closed:
