@@ -15,8 +15,5 @@
      'views/product_views.xml',
      'views/assets.xml',
      ],
- 'qweb': [
-        'static/src/xml/pos_arabic.xml'
-     ],
 
  }
