@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- product template: views inheritance -->
+       <record id='helpdesk_stage_form_view' model='ir.ui.view'>
+           <field name="inherit_id" ref="helpdesk.helpdesk_stage_form_view" />
+           <field name="model">helpdesk.stage</field>
+        <field name="arch" type="xml">
+            <field name="is_close" position="before">
+                <field name="Review_name" />
+            </field>
+        </field>
+    </record>
+</odoo>
