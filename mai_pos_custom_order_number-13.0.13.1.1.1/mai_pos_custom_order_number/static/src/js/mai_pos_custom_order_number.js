@@ -26,7 +26,7 @@ models.Order = models.Order.extend({
 		}
 		var seq = zero_pad(this.sequence_number,4)
 		if (this.pos.config.seq_receipt_number) {
-			var padding = 4;
+			var padding = 10;
 			if (this.pos.config.seq_receipt_number_padding) {
 				padding = this.pos.config.seq_receipt_number_padding;
 			}
