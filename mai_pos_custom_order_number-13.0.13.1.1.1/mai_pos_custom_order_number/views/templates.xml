@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <template id="pos_mai_pos_custom_order_number_assets" inherit_id="point_of_sale.assets">
-            <xpath expr="." position="after">
+            <xpath expr="//field[@name='receipt.name']" position="after">
                 <script type="text/javascript" src="/mai_pos_custom_order_number/static/src/js/mai_pos_custom_order_number.js"></script>
             </xpath>
         </template>
